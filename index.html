@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Budget App</title>
+  <link rel="stylesheet" href="css/all.min.css">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+</head>
+<body>
+  <h1>Budget App</h1>
+  <div class="budget-box">
+    <div class="error">You Can't Input an empty value or an negative value</div>
+    <form class="input">
+      <label for="budgetInput">Please Enter your Budget</label>
+      <input type="number" id="budgetInput">
+      <input type="button" value="Calculate" id="budgetSubmit">
+    </form>
+    <div class="output">
+      <div class="box">
+        <h2>Budget</h2>
+        <i class="fas fa-money-bill-alt"></i>
+        <span id="budgetOutput">0</span>
+      </div>
+      <div class="box">
+        <h2>Expenses</h2>
+        <i class="far fa-credit-card"></i>
+        <span class="expenseOutput" id="expenseOutput">0</span>
+      </div>
+      <div class="box">
+        <h2>Balance</h2>
+        <i class="fas fa-dollar-sign"></i>
+        <span id="balanceOutput">0</span>
+      </div>
+    </div>
+  </div>
+  <div class="expense-box">
+    <div class="error">You Can't Input an empty value or an negative value</div>
+    <form class="input">
+      <label for="expenseNameInput">Please Enter Your Expense</label>
+      <input type="text" id="expenseNameInput">
+      <label for="expenseInput">Please Enter Expense Amount</label>
+      <input type="number" id="expenseInput">
+      <input type="button" id="expenseSubmit" value="Add Expense">
+    </form>
+    <div class="output" id="expenseOutputDiv">
+      <div class="row">
+        <h3>Expense Title</h3>
+        <h3>Expense Value</h3>
+        <h3></h3>
+      </div>
+    </div>
+  </div>
+  <script src="js/main.js"></script>
+</body>
+</html>

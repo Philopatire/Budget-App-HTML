@@ -1,0 +1,223 @@
+* {
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  font-family: 'Roboto', sans-serif;
+  margin: 0;
+  padding: 0;
+  color: var(--dark)
+}
+:root {
+  --green: #317b22;
+  --red: #b80c09;
+  --blue: #05668d;
+  --dark: #333333;
+}
+body {
+  padding: 20px;
+}
+.error {
+  margin-bottom: 15px;
+  padding: 20px;
+  background-color: #b80c092e;
+  width: 100%;
+  border-radius: 6px;
+  color: var(--red);
+  height: 55px;
+  display: none;
+}
+.error.active {
+  display: block;
+}
+h1 {
+  font-weight: 400;
+  margin-bottom: 20px;
+}
+body > div {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+.input {
+  margin-bottom: 40px;
+  width: 350px;
+  border-radius: 4px;
+  padding: 20px 10px;
+  border: 3px solid;
+}
+.input label {
+  display: block;
+  margin-bottom: 5px;
+  font-weight: 500;
+  font-size: 1.2em;
+}
+.input input:focus {
+  outline: none;
+}
+.input input[type="text"],
+.input input[type="number"]{
+  display: block;
+  width: 100%;
+  margin-bottom: 20px;
+  height: 40px;
+  padding: 0 12px;
+  border-radius: 2px;
+  border: 2px solid
+}
+.input input[type="button"] {
+  background-color: transparent;
+  border: 2px solid;
+  padding: 7px 12px;
+  border-radius: 3px;
+  cursor: pointer;
+}
+.output {
+  flex-grow: 2;
+  margin-bottom: 40px;
+}
+.budget-box > .input {
+  border-color: var(--green);
+}
+.budget-box > .input input[type="number"] {
+  border-color: var(--green);
+}
+.budget-box > .input input[type="button"] {
+  border-color: var(--green);
+  color: var(--green);
+}
+.budget-box > .input input[type="button"]:hover {
+  background-color: var(--green);
+  color: #fff;
+}
+.budget-box > .output .box {
+  text-align: center;
+}
+.budget-box > .output .box h2 {
+  font-weight: 500;
+  margin-bottom: 30px;
+  font-variant-caps: all-petite-caps;
+  font-size: 1.8em;
+}
+.budget-box > .output .box i {
+  display: block;
+  margin-bottom: 20px;
+  font-size: 3em;
+  color: var(--blue)
+}
+.budget-box > .output .box span {
+  font-size: 2.5em;
+  font-weight: 500;
+  color: var(--green)
+}
+.budget-box > .output .box span::before {
+  content: "$ ";
+}
+.budget-box > .output .expenseOutput {
+  color: var(--red) !important;
+}
+.budget-box .output {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+.expense-box .input {
+  border-color: var(--red)
+}
+.expense-box .input input[type="text"],
+.expense-box .input input[type="number"]{
+  border-color: var(--red)
+}
+.expense-box .input input[type="button"] {
+  border-color: var(--red);
+  color: var(var(--red));
+}
+.expense-box .input input[type="button"]:hover {
+  color: #fff;
+  background-color: var(--red);
+}
+.expense-box .output .row {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  height: 40px;
+  width: 100%;
+  margin-bottom: 20px;
+}
+.expense-box .output .row [contentEditable="true"] {
+  border: 1px solid;
+  padding: 10px 20px;
+}
+.expense-box .output .row [contentEditable="true"]:focus {
+  outline: none;
+}
+.expense-box .output .row h3,
+.expense-box .output .row span{
+  display: inline-block;
+  width: 150px;
+}
+.expense-box .output .row h3:last-child,
+.expense-box .output .row span:last-child{
+  width: 70px;
+}
+.expense-box .output .row h3 {
+  font-size: 1.2em;
+  font-weight: 500;
+}
+.expense-box .output .row span.expense-name::before {
+  content: "- "
+}
+.expense-box .output .row span.expense-value::before {
+  content: "- $ "
+}
+.expense-box .output .row span{
+  color: var(--red);
+}
+.expense-box .output .row span:last-child {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+.expense-box .output .row span:last-child button {
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+}
+.expense-box .output .row span:last-child button.delete-expense i {
+  color: var(--red)
+}
+.expense-box .output .row span:last-child button.edit-expense i {
+  color: var(--blue)
+}
+@media (min-width: 1400px) {
+  .input {
+    width: 500px;
+  }
+  .error {
+    width: 500px;
+  }
+}
+@media (max-width: 930px) {
+  body > div {
+    flex-direction: column;
+  }
+  .input {
+    width: 100%;
+  }
+}
+@media (max-width: 480px) {
+  .input label {
+    font-size: 1em;
+  }
+  .budget-box .output {
+    flex-direction: column;
+  }
+  .expense-box .output .row h3,
+  .expense-box .output .row span{
+    width: 100px;
+    text-align: center;
+  }
+  .expense-box .output .row h3:last-child,
+  .expense-box .output .row span:last-child{
+    width: 40px;
+  }
+}
